@@ -1,7 +1,7 @@
-from soma import Soma
-from subtracao import Subtracao
-from divisao import Divisao
-from multiplicacao import Multiplicacao
+from operacao.soma import Soma
+from operacao.subtracao import Subtracao
+from operacao.divisao import Divisao
+from operacao.multiplicacao import Multiplicacao
 
 class OperacaoFabrica:
 

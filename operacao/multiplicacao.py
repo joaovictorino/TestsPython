@@ -1,4 +1,4 @@
-from operacao import Operacao
+from operacao.operacao import Operacao
 
 @Operacao.register
 class Multiplicacao():

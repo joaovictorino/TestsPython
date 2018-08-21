@@ -1,4 +1,4 @@
-from operacaoFabrica import OperacaoFabrica
+from operacao.operacaoFabrica import OperacaoFabrica
 
 class Calculadora:
 
