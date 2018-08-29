@@ -9,7 +9,7 @@ from calculadora import calcular
 
 
 if __name__ == '__main__':
-    print("Informe as operações válidas (+) soma (-) subtração (*) multiplicação (/) divisão:")
+    print("Informe as operações habilitadas (+) soma (-) subtração (*) multiplicação (/) divisão:")
     operadores = input()
     continuar = "S"
     while continuar == "S":
