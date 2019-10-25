@@ -1,23 +1,14 @@
 import requests
-from retry.api import retry_call
+from retry import retry
 
-def make_trouble(service, info=None):
-    if not info:
-        info = ''
-    r = requests.get(service + info)
-    return r.text
+@retry()
+def do_request(service):
+    response = requests.get(service)
+    response.raise_for_status()
+    return response.text
 
-
-def what_is_my_ip(approach=None):
-    if approach == "optimistic":
-        tries = 1
-    elif approach == "conservative":
-        tries = 3
-    else:
-        # skeptical
-        tries = -1
-    #result = retry_call(make_trouble, fargs=["http://ipinfo.io/"], fkwargs={"info": "ip"}, tries=tries)
-    result = retry_call(make_trouble, fargs=["http://ipinfo.io/"], tries=tries)
+def what_is_my_ip():
+    result = do_request("http://localhost:5000/")
     print(result)
 
-what_is_my_ip("conservative")
+what_is_my_ip()
