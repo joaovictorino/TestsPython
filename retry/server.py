@@ -9,7 +9,7 @@ def index():
         r = requests.get("http://ipinfo.io/ip")
         return r.text
     else:
-        raise Exception("Não quero fazer!")
+        raise Exception("Nao quero fazer!")
 
 if __name__ == "__main__":
     app.run()
